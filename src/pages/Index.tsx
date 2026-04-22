@@ -195,11 +195,7 @@ export default function Index() {
               style={btnGrad}>
               Забронировать сеанс
             </button>
-            <button onClick={() => scrollTo("услуги")}
-              className="px-8 py-4 rounded-full font-body text-base transition-all hover:bg-white/60"
-              style={{ border: "1px solid hsl(30,20%,80%)", color: "hsl(20,15%,42%)" }}>
-              Все услуги
-            </button>
+
           </div>
           <div className="animate-fade-up-4 flex gap-10 mt-14">
             {[["1 200+", "Довольных гостей"], ["8", "Мастеров"], ["3", "Года работы"]].map(([n, l]) => (
