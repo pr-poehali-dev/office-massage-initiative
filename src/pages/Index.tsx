@@ -55,7 +55,7 @@ const priceCategories = [
       { name: "Ароматерапевтический", duration: "75 мин", price: "3 200 ₽" },
       { name: "Стоун-терапия", duration: "90 мин", price: "4 500 ₽" },
       { name: "Антицеллюлитный", duration: "60 мин", price: "2 800 ₽" },
-      { name: "Релаксирующий SPA-ритуал", duration: "120 мин", price: "5 500 ₽" },
+      { name: "Релаксирующий SPA-ритуал", duration: "120 мин", price: "30 000 ₽" },
     ],
   },
   {
