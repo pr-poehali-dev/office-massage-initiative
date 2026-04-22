@@ -25,7 +25,50 @@ const reviews = [
   { name: "Виктория Р.", text: "Пришла на ароматерапевтический, осталась на SPA-ритуал. Мастера настоящие профессионалы, а интерьер просто обволакивает.", rating: 5, date: "Апрель 2026" },
 ];
 
-const navLinks = ["Услуги", "О нас", "Мастера", "Отзывы", "Контакты"];
+const navLinks = ["Услуги", "Прайс", "О нас", "Мастера", "Отзывы", "Контакты"];
+
+const priceCategories = [
+  {
+    title: "Классический массаж",
+    emoji: "✨",
+    items: [
+      { name: "Спина и воротниковая зона", duration: "30 мин", price: "1 400 ₽" },
+      { name: "Классический общий", duration: "60 мин", price: "2 500 ₽" },
+      { name: "Классический общий", duration: "90 мин", price: "3 400 ₽" },
+      { name: "Антистресс (голова + шея)", duration: "45 мин", price: "1 800 ₽" },
+    ],
+  },
+  {
+    title: "Тайский массаж",
+    emoji: "🌺",
+    items: [
+      { name: "Тайский традиционный", duration: "60 мин", price: "2 900 ₽" },
+      { name: "Тайский традиционный", duration: "90 мин", price: "3 800 ₽" },
+      { name: "Тайский с маслом", duration: "90 мин", price: "4 200 ₽" },
+      { name: "Тайский королевский", duration: "120 мин", price: "5 200 ₽" },
+    ],
+  },
+  {
+    title: "SPA-ритуалы",
+    emoji: "🌿",
+    items: [
+      { name: "Ароматерапевтический", duration: "75 мин", price: "3 200 ₽" },
+      { name: "Стоун-терапия", duration: "90 мин", price: "4 500 ₽" },
+      { name: "Антицеллюлитный", duration: "60 мин", price: "2 800 ₽" },
+      { name: "Релаксирующий SPA-ритуал", duration: "120 мин", price: "5 500 ₽" },
+    ],
+  },
+  {
+    title: "Абонементы",
+    emoji: "🎁",
+    items: [
+      { name: "5 сеансов (классика 60 мин)", duration: "—", price: "10 500 ₽" },
+      { name: "10 сеансов (классика 60 мин)", duration: "—", price: "19 000 ₽" },
+      { name: "5 сеансов (тайский 90 мин)", duration: "—", price: "16 500 ₽" },
+      { name: "Подарочный сертификат", duration: "любой", price: "от 2 500 ₽" },
+    ],
+  },
+];
 const TIMES = ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
 const DAYS = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
 
@@ -195,6 +238,50 @@ export default function Index() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* PRICE */}
+      <section id="прайс" className="py-24 px-6 md:px-20"
+        style={{ background: "linear-gradient(160deg, hsl(30,40%,96%), hsl(340,30%,96%))" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="font-body text-xs tracking-[0.35em] uppercase mb-3" style={{ color: "hsl(340,40%,52%)" }}>Стоимость</p>
+            <h2 className="font-display text-5xl md:text-6xl font-light text-foreground">Прайс-лист</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {priceCategories.map((cat) => (
+              <div key={cat.title} className="rounded-3xl overflow-hidden"
+                style={{ background: "white", border: "1px solid hsl(30,20%,90%)" }}>
+                <div className="px-7 py-5 flex items-center gap-3"
+                  style={{ background: "linear-gradient(135deg, hsl(340,35%,93%), hsl(25,50%,91%))", borderBottom: "1px solid hsl(30,20%,90%)" }}>
+                  <span className="text-2xl">{cat.emoji}</span>
+                  <h3 className="font-display text-2xl font-light text-foreground">{cat.title}</h3>
+                </div>
+                <div className="divide-y" style={{ borderColor: "hsl(30,20%,92%)" }}>
+                  {cat.items.map((item) => (
+                    <div key={item.name + item.duration} className="flex items-center justify-between px-7 py-4 hover:bg-[hsl(30,30%,98%)] transition-colors">
+                      <div>
+                        <div className="font-body text-sm text-foreground">{item.name}</div>
+                        {item.duration !== "—" && item.duration !== "любой" && (
+                          <div className="font-body text-xs mt-0.5 flex items-center gap-1" style={{ color: "hsl(20,10%,60%)" }}>
+                            <Icon name="Clock" size={11} /> {item.duration}
+                          </div>
+                        )}
+                        {(item.duration === "—" || item.duration === "любой") && (
+                          <div className="font-body text-xs mt-0.5" style={{ color: "hsl(20,10%,60%)" }}>{item.duration}</div>
+                        )}
+                      </div>
+                      <span className="font-body font-medium text-sm ml-4 whitespace-nowrap" style={{ color: "hsl(340,40%,48%)" }}>{item.price}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center font-body text-sm mt-8" style={{ color: "hsl(20,10%,62%)" }}>
+            * Первый визит — скидка 20%. Абонементы не суммируются с другими акциями.
+          </p>
         </div>
       </section>
 
