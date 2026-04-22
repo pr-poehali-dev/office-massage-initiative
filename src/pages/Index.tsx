@@ -87,7 +87,7 @@ export default function Index() {
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4"
         style={{ background: "rgba(250,245,240,0.88)", backdropFilter: "blur(18px)", borderBottom: "1px solid hsl(30,20%,88%)" }}>
-        <span className="font-display text-2xl font-light tracking-widest text-[hsl(340,40%,45%)]">Serena</span>
+        <span className="font-display text-2xl font-light tracking-widest text-[hsl(340,40%,45%)]">Мандарин</span>
         <div className="hidden md:flex gap-8">
           {navLinks.map(l => (
             <button key={l} onClick={() => scrollTo(l.toLowerCase())}
@@ -208,7 +208,7 @@ export default function Index() {
               Тихая гавань<br />в центре города
             </h2>
             <p className="font-body text-base leading-8 mb-6" style={{ color: "hsl(20,12%,50%)" }}>
-              Serena — это больше чем массажный центр. Мы создали пространство, где каждая деталь продумана для вашего комфорта: от аромата свежих трав на входе до температуры подогретых масел.
+              Мандарин — это больше чем массажный центр. Мы создали пространство, где каждая деталь продумана для вашего комфорта: от аромата свежих трав на входе до температуры подогретых масел.
             </p>
             <p className="font-body text-base leading-8 mb-10" style={{ color: "hsl(20,12%,50%)" }}>
               Наши мастера прошли обучение в лучших школах России и Азии. Каждая техника — результат многолетней практики и искренней любви к своему делу.
@@ -224,7 +224,7 @@ export default function Index() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden"
               style={{ boxShadow: "0 30px 80px rgba(180,90,130,0.18)" }}>
-              <img src={HERO_IMG} alt="Интерьер Serena" className="w-full h-80 md:h-96 object-cover" />
+              <img src={HERO_IMG} alt="Интерьер Мандарин" className="w-full h-80 md:h-96 object-cover" />
             </div>
             <div className="absolute -bottom-6 -left-6 rounded-2xl px-6 py-4"
               style={{ background: "white", border: "1px solid hsl(30,20%,88%)", boxShadow: "0 8px 32px rgba(0,0,0,0.08)" }}>
@@ -338,7 +338,7 @@ export default function Index() {
         <div className="relative z-10 py-16 px-10 md:px-16 text-center">
           <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-4">Первый визит — со скидкой 20%</h2>
           <p className="font-body text-base mb-8" style={{ color: "rgba(255,255,255,0.8)" }}>
-            Запишитесь сегодня и получите приветственный подарок от Serena
+            Запишитесь сегодня и получите приветственный подарок от Мандарин
           </p>
           <button onClick={openBook}
             className="px-10 py-4 rounded-full font-body text-base transition-all hover:scale-105"
@@ -351,8 +351,8 @@ export default function Index() {
       {/* FOOTER */}
       <footer className="py-10 px-6 md:px-20" style={{ borderTop: "1px solid hsl(30,20%,88%)" }}>
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="font-display text-2xl font-light tracking-widest" style={{ color: "hsl(340,40%,45%)" }}>Serena</span>
-          <p className="font-body text-sm" style={{ color: "hsl(20,10%,62%)" }}>© 2026 Serena Massage Center. Все права защищены.</p>
+          <span className="font-display text-2xl font-light tracking-widest" style={{ color: "hsl(340,40%,45%)" }}>Мандарин</span>
+          <p className="font-body text-sm" style={{ color: "hsl(20,10%,62%)" }}>© 2026 Мандарин Massage Center. Все права защищены.</p>
           <div className="flex gap-6">
             {["ВКонтакте", "Telegram", "Instagram"].map(s => (
               <button key={s} className="font-body text-sm transition-colors hover:opacity-80"
